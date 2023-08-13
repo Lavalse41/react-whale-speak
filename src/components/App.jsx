@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { randomWords } from "../randomWords.js";
 import Logo from "./Logo.jsx";
+import Image from "./Image.jsx";
 import Translator from "./Translator.jsx";
 import History from "./History.jsx";
 import "../index.css";
@@ -48,7 +49,8 @@ function App() {
 
   return (
     <div className="pt-9 bg-sky-100 w-screen h-screen flex flex-col items-center">
-      <Logo
+      <Logo />
+      <Image
         randomWhaleWord={randomWhaleWord}
         isLoading={isLoading}
         isHidden={isHidden}

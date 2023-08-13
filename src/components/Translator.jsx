@@ -18,26 +18,18 @@ function Translator({ addToHistory, showTranslate }) {
     }
 
     const cleanText = text.trim().toUpperCase();
-    console.log(cleanText);
+    // console.log(cleanText);
 
     const vowel = ["A", "E", "I", "O", "U"];
     let result = [];
 
-    for (let i = 0; i < cleanText.length; i++) {
-      for (let j = 0; j < vowel.length; j++) {
-        if (cleanText[i] === vowel[j]) {
-          result.push(vowel[j]);
-        }
-      }
-      if (cleanText[i] === "E") {
-        result.push(cleanText[i]);
-      }
-      if (cleanText[i] === "U") {
-        result.push(cleanText[i]);
+    for (const char of cleanText) {
+      if (vowel.includes(char) || char === "E" || char === "U") {
+        result.push(char);
       }
     }
 
-    console.log(result);
+    // console.log(result);
     if (
       !result.includes("A") &&
       !result.includes("E") &&
