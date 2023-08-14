@@ -1,24 +1,26 @@
+import { imageSrc } from "../data/imageSrc";
+
 function Image({ randomWhaleWord, isLoading, isHidden }) {
   return (
     <div className="flex flex-col items-center">
       <div className="relative">
         <img
-          className="absolute left-[290px] top-[-20px] z-10"
+          className="absolute left-[310px] top-[-20px] z-10"
           width="230px"
-          src="./src/assets/bubble.png"
-          alt="bubble"
+          src={imageSrc.bubbleL}
+          alt="bubble-left"
         ></img>
         {isHidden ? (
           <img
-            className="absolute left-[347px] top-[7px] z-10"
+            className="absolute left-[367px] top-[7px] z-10"
             width="110px"
-            src="./src/assets/lonely2.png"
-            alt="lonely"
+            src={imageSrc.lonelyText}
+            alt="lonely-text"
           ></img>
         ) : (
           ""
         )}
-        <div className="absolute left-[370px] top-[20px] z-10">
+        <div className="absolute left-[390px] top-[20px] z-10">
           {isLoading ? (
             <div className="lds-ellipsis">
               <div></div>
@@ -27,7 +29,7 @@ function Image({ randomWhaleWord, isLoading, isHidden }) {
               <div></div>
             </div>
           ) : (
-            <div className="relative right-[10px] text-xl ">
+            <div className="font-ki_comic font-bold relative right-[10px] text-xl ">
               {randomWhaleWord}
             </div>
           )}
