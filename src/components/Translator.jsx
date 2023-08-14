@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { imageSrc } from "../data/imageSrc";
 
 function Translator({ addToHistory, showTranslate }) {
   const [text, setText] = useState("");
@@ -10,7 +11,7 @@ function Translator({ addToHistory, showTranslate }) {
 
     if (!text.trim()) return;
 
-    if (text.length > 20) {
+    if (text.length > 35) {
       setError(true);
       return;
     } else {
@@ -24,8 +25,14 @@ function Translator({ addToHistory, showTranslate }) {
     let result = [];
 
     for (const char of cleanText) {
-      if (vowel.includes(char) || char === "E" || char === "U") {
+      if (vowel.includes(char)) {
         result.push(char);
+      }
+      if (char === "E") {
+        result.push("E");
+      }
+      if (char === "U") {
+        result.push("U");
       }
     }
 
@@ -38,6 +45,10 @@ function Translator({ addToHistory, showTranslate }) {
       !result.includes("U")
     ) {
       result.push("UUUUU");
+    }
+
+    if (result.length > 10) {
+      result = result.slice(0, 11);
     }
 
     const resultString = result.join("");
@@ -53,18 +64,18 @@ function Translator({ addToHistory, showTranslate }) {
   return (
     <form
       onSubmit={handleSubmit}
-      className="relative mt-9 w-[800px] border-2 border-slate-800  pt-4 pb-7 rounded-xl bg-sky-700 text-center"
+      className="relative mt-9 w-[700px] border-2 border-slate-800  pt-4 pb-7 rounded-xl bg-sky-700 text-center"
     >
       {showTranslate ? (
         <>
-          <div className="w-[200px] h-[100px] absolute flex justify-center items-center z-10 bottom-[240px] left-[-40px] text-2xl">
+          <div className="font-ki_comic font-bold w-[200px] h-[100px] absolute flex justify-center items-center z-10 bottom-[240px] left-[-40px] text-2xl">
             {translate}
           </div>
           <img
             className="absolute z-1 bottom-[200px] left-[-60px]"
             width="240px"
-            src="./src/assets/word.png"
-            alt="word"
+            src={imageSrc.bubbleR}
+            alt="bubble-right"
           ></img>
         </>
       ) : (
@@ -72,8 +83,8 @@ function Translator({ addToHistory, showTranslate }) {
       )}
 
       {error ? (
-        <p className="absolute left-[100px] top-[5px] text-yellow-300">
-          Please don't type more than 20 characters. The whale can't catch your
+        <p className="absolute text-sm left-[80px] top-[5px] text-yellow-300">
+          Please don't type more than 35 characters. The whale can't catch your
           words.
         </p>
       ) : (
@@ -86,6 +97,7 @@ function Translator({ addToHistory, showTranslate }) {
         placeholder="Enter what you want to tell him/her."
         onChange={(e) => setText(e.target.value)}
         className="relative border-2 border-slate-800 px-3 p-2 mt-4 w-[400px] rounded-xl"
+        maxLength={50}
       ></input>
       <br></br>
       <button className="border-2 border-slate-800 mt-4 p-1 w-[200px] rounded-full bg-pink-300">

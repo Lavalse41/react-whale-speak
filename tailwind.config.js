@@ -7,6 +7,8 @@ export default {
       fontFamily: {
         caprasimo: ["Caprasimo", "serif"],
         vollkorn: ["Vollkorn", "serif"],
+        comic_neue: ["Comic Neue", "serif"],
+        ki_comic: ["Ki Comic", "sans-serif"],
       },
     },
   },

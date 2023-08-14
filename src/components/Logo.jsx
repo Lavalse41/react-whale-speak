@@ -1,3 +1,5 @@
+import { imageSrc } from "../data/imageSrc";
+
 function Logo() {
   return (
     <div className="flex flex-col items-center">
@@ -7,7 +9,7 @@ function Logo() {
             <img
               width="48"
               height="48"
-              src="./src/assets/speech-icon.png"
+              src={imageSrc.speechIcon}
               alt="speech-bubble"
             />
           </span>
@@ -16,7 +18,7 @@ function Logo() {
             <img
               width="64"
               height="64"
-              src="./src/assets/whale-icon.png"
+              src={imageSrc.whaleIcon}
               alt="experimental-orca-color-pixels"
             />
           </span>

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { randomWords } from "../randomWords.js";
+import { randomWords } from "../data/randomWords.js";
 import Logo from "./Logo.jsx";
 import Image from "./Image.jsx";
 import Translator from "./Translator.jsx";
