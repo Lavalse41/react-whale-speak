@@ -100,7 +100,7 @@ function Translator({ addToHistory, showTranslate }) {
         maxLength={50}
       ></input>
       <br></br>
-      <button className="border-2 border-slate-800 mt-4 p-1 w-[200px] rounded-full bg-pink-300">
+      <button className="btn bg-pink-200 border-2 border-slate-800 w-[200px] rounded-full">
         Speak
       </button>
     </form>
