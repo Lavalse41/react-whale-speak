@@ -64,16 +64,15 @@ function Translator({ addToHistory, showTranslate }) {
   return (
     <form
       onSubmit={handleSubmit}
-      className="relative mt-9 w-[700px] border-2 border-slate-800  pt-4 pb-7 rounded-xl bg-sky-700 text-center"
+      className="relative mt-9 w-80 sm:w-[38.8rem] border-2 border-slate-800 pt-4 pb-7 rounded-xl bg-sky-700 text-center"
     >
       {showTranslate ? (
         <>
-          <div className="font-ki_comic font-bold w-[200px] h-[100px] absolute flex justify-center items-center z-10 bottom-[240px] left-[-40px] text-2xl">
+          <div className="font-ki_comic font-bold w-[11rem] h-[6rem] absolute flex justify-center items-center z-10 bottom-[10rem] sm:bottom-[13rem] sm:left-[-2rem] left-[-2.5rem] text-base sm:text-2xl ">
             {translate}
           </div>
           <img
-            className="absolute z-1 bottom-[200px] left-[-60px]"
-            width="240px"
+            className="w-32 sm:w-[13rem] left-[-1rem] bottom-[10rem] absolute z-1 sm:bottom-[11rem] sm:left-[-3rem]"
             src={imageSrc.bubbleR}
             alt="bubble-right"
           ></img>
@@ -83,7 +82,7 @@ function Translator({ addToHistory, showTranslate }) {
       )}
 
       {error ? (
-        <p className="absolute text-sm left-[80px] top-[5px] text-yellow-300">
+        <p className="relative sm:absolute text-sm top-3 left-0 sm:left-[5rem] sm:top-[0.5rem] text-yellow-300">
           Please don't type more than 35 characters. The whale can't catch your
           words.
         </p>
@@ -96,11 +95,11 @@ function Translator({ addToHistory, showTranslate }) {
         value={text}
         placeholder="Enter what you want to tell him/her."
         onChange={(e) => setText(e.target.value)}
-        className="relative border-2 border-slate-800 px-3 p-2 mt-4 w-[400px] rounded-xl"
+        className="text-sm sm:text-base relative border-2 border-slate-800 px-3 p-2 mt-4 w-64 sm:w-[22rem] rounded-lg sm:rounded-xl"
         maxLength={50}
       ></input>
       <br></br>
-      <button className="btn bg-pink-200 border-2 border-slate-800 w-[200px] rounded-full">
+      <button className="mt-4 py-1 btn bg-pink-400 border-2 border-slate-800 w-[11rem] rounded-full">
         Speak
       </button>
     </form>

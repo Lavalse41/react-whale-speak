@@ -48,24 +48,28 @@ function App() {
   }
 
   return (
-    <div className="pt-9 bg-sky-100 w-screen h-screen flex flex-col items-center">
-      <Logo />
-      <Image
-        randomWhaleWord={randomWhaleWord}
-        isLoading={isLoading}
-        isHidden={isHidden}
-      />
-      <Translator addToHistory={addToHistory} showTranslate={showTranslate} />
-      {showHistory ? (
-        <History
-          prevTranslate={prevTranslate}
-          onDeletePrevTranslate={handleDeletePrevTranslate}
+    <div className="bg-sky-100 w-screen">
+      <div className="pt-9 pb-9 flex flex-col items-center ">
+        <Logo />
+        <Image
+          randomWhaleWord={randomWhaleWord}
+          isLoading={isLoading}
+          isHidden={isHidden}
         />
-      ) : (
-        ""
-      )}
-      <div className="absolute text-sm bottom-[20px] right-[30px] text-slate-400">
-        icons from icons8
+        <Translator addToHistory={addToHistory} showTranslate={showTranslate} />
+        {showHistory ? (
+          <History
+            prevTranslate={prevTranslate}
+            onDeletePrevTranslate={handleDeletePrevTranslate}
+          />
+        ) : (
+          ""
+        )}{" "}
+      </div>
+      <div className="flex justify-end">
+        <div className="text-sm relative bottom-4 right-6 text-slate-400">
+          icons from icons8
+        </div>
       </div>
     </div>
   );
